@@ -1,9 +1,8 @@
-const CACHE = 'excuse-generator-v1';
+const CACHE = 'goli-karao-v2';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './icon.svg',
   './icon-192.png',
   './icon-512.png',
   './icon-180.png'
@@ -24,14 +23,25 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
-  // never cache the AI API calls
-  if (url.hostname.endsWith('groq.com')) return;
+  if (url.hostname.endsWith('groq.com')) return; // never cache AI calls
+
+  // Network-first for the page itself, so updates always show when online
+  if (e.request.mode === 'navigate') {
+    e.respondWith(
+      fetch(e.request)
+        .then(r => { const c = r.clone(); caches.open(CACHE).then(cc => cc.put(e.request, c)); return r; })
+        .catch(() => caches.match(e.request).then(m => m || caches.match('./index.html')))
+    );
+    return;
+  }
+
+  // Cache-first for static assets, with background refresh
   e.respondWith(
     caches.match(e.request).then(hit =>
-      hit || fetch(e.request).then(resp => {
-        const copy = resp.clone();
-        caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
-        return resp;
+      hit || fetch(e.request).then(r => {
+        const c = r.clone();
+        caches.open(CACHE).then(cc => cc.put(e.request, c)).catch(() => {});
+        return r;
       }).catch(() => caches.match('./index.html'))
     )
   );
