@@ -1,0 +1,16 @@
+{
+  "name": "Goli Karao Pro",
+  "short_name": "Goli Karao",
+  "description": "Describe the situation, slide the dials, get smart tailored excuses in your own language.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f6fc",
+  "theme_color": "#6a7bff",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
