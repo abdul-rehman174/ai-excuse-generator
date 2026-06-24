@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Goli Karao Pro 🎯</title>
+<meta name="description" content="Describe the situation (type or speak), slide the dials, and get smart, tailored excuses in your own language." />
+<meta name="theme-color" content="#6a7bff" />
+
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icon-180.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Goli Karao" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Goli Karao Pro" />
+<meta property="og:description" content="Describe the situation (type or speak) and get smart, tailored excuses in your own language." />
+<meta property="og:image" content="icon-512.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Goli Karao Pro" />
+<meta name="twitter:description" content="Smart, tailored excuses in your own language — type or speak, with believability and drama dials." />
+<meta name="twitter:image" content="icon-512.png" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+  :root{--bg1:#f5f6fc;--bg2:#edeffa;--ink:#2c2d40;--card:#ffffff;--line:#e7e9f5;--p:#6a7bff;--p2:#9a8cf5;--muted:#8a8da6;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Fredoka',sans-serif;color:var(--ink);min-height:100vh;padding:24px 16px;
+    background:radial-gradient(820px 380px at 50% -10%,#e6e9ff 0,transparent 60%),linear-gradient(170deg,var(--bg1),var(--bg2));background-attachment:fixed;}
+  .wrap{max-width:620px;margin:0 auto;}
+  .top{display:flex;justify-content:flex-end;}
+  .gear{background:var(--card);border:1px solid var(--line);color:var(--muted);width:40px;height:40px;border-radius:12px;cursor:pointer;font-size:18px;}
+  .gear:hover{color:var(--ink);}
+  h1{font-size:42px;font-weight:700;text-align:center;line-height:1.05;margin-top:4px;
+    background:linear-gradient(90deg,var(--p2),var(--p));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .sub{text-align:center;color:var(--muted);font-size:16px;margin:8px 0 22px;font-weight:500;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 14px 40px rgba(90,100,170,.12);}
+  label{display:block;font-weight:600;font-size:15px;margin-bottom:8px;}
+  .input-row{display:flex;gap:10px;}
+  input[type=text]{flex:1;background:#f7f8fc;border:2px solid var(--line);border-radius:14px;padding:14px;color:var(--ink);font-family:inherit;font-size:16px;outline:none;}
+  input[type=text]:focus{border-color:var(--p);}
+  .mic{flex:none;width:52px;border:2px solid var(--line);background:#f7f8fc;border-radius:14px;cursor:pointer;font-size:20px;color:var(--ink);transition:.15s;}
+  .mic:hover{border-color:var(--p);}
+  .mic.on{border-color:#ff5a72;background:rgba(255,90,114,.18);animation:pulse 1s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,90,114,.55);}50%{box-shadow:0 0 0 7px rgba(255,90,114,0);}}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .chip{cursor:pointer;background:rgba(106,123,255,.08);border:1px solid var(--line);color:var(--muted);padding:7px 12px;border-radius:999px;font-size:13px;font-family:inherit;transition:.15s;}
+  .chip:hover{border-color:var(--p);color:var(--ink);}
+  .slider{margin-top:18px;}
+  .slider .row{display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:6px;}
+  .slider .val{color:var(--p);}
+  input[type=range]{width:100%;-webkit-appearance:none;height:8px;border-radius:99px;background:var(--line);outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--p2),var(--p));cursor:pointer;box-shadow:0 3px 10px rgba(109,94,252,.6);}
+  .go{margin-top:20px;width:100%;cursor:pointer;border:none;font-family:inherit;font-weight:700;font-size:18px;color:#fff;padding:15px;border-radius:15px;
+    background:linear-gradient(90deg,var(--p2),var(--p));box-shadow:0 10px 28px rgba(124,108,255,.4);transition:transform .12s,filter .2s;}
+  .go:hover:not(:disabled){filter:brightness(1.08);}.go:active:not(:disabled){transform:translateY(2px);}.go:disabled{opacity:.6;cursor:default;}
+  .out{margin-top:22px;display:none;}.out.show{display:block;}
+  .ex-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--p);border-radius:14px;padding:14px 16px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start;}
+  .ex-card .n{font-weight:700;color:var(--p);font-size:16px;}
+  .ex-card .body{flex:1;}
+  .ex-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;}
+  .ex-title{font-weight:700;font-size:14px;color:var(--p);}
+  .conf{font-size:10px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;border-radius:6px;padding:2px 8px;flex:none;}
+  .conf.hi{background:rgba(34,160,90,.12);color:#1f9d57;}
+  .conf.mid{background:rgba(220,150,20,.14);color:#b9740a;}
+  .conf.lo{background:rgba(140,140,170,.14);color:var(--muted);}
+  .ex-line{display:flex;gap:8px;align-items:flex-start;}
+  .ex-line .txt{flex:1;font-size:15px;line-height:1.5;font-weight:500;}
+  .cp{background:rgba(106,123,255,.1);border:1px solid var(--line);color:var(--p);border-radius:8px;font-size:11px;padding:3px 8px;cursor:pointer;font-family:inherit;flex:none;}
+  .cp:hover{border-color:var(--p);}
+  .tip{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.45;}
+  .err{background:#fdecec;border:1px solid #f5c2c2;color:#b3344a;border-radius:12px;padding:13px;margin-top:14px;font-size:14px;display:none;line-height:1.5;}.err.show{display:block;}
+  .mbg{position:fixed;inset:0;background:rgba(40,42,70,.42);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;z-index:50;}
+  .mbg.show{display:flex;}
+  .modal{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;width:100%;max-width:440px;}
+  .modal h3{font-size:19px;margin-bottom:6px;}.modal p{color:var(--muted);font-size:13px;line-height:1.55;margin-bottom:14px;}
+  .modal label{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:12px 0 6px;}
+  .modal input,.modal select{width:100%;background:#f7f8fc;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--ink);font-family:inherit;font-size:15px;outline:none;}
+  .msave{margin-top:18px;width:100%;background:linear-gradient(90deg,var(--p2),var(--p));color:#fff;border:none;font-weight:700;font-size:15px;padding:13px;border-radius:11px;cursor:pointer;font-family:inherit;}
+  .key-note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5;}.key-note a{color:var(--p);}
+  .spin{display:inline-block;width:18px;height:18px;border:3px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-3px;margin-right:8px;}
+  @keyframes sp{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top"><button class="gear" id="gear" title="API key & model">⚙️</button></div>
+    <h1>Goli Karao Pro</h1>
+    <p class="sub">Kisi plan ko goli marni hai? Situation batao — likho ya bolo — perfect excuse ready. 🎯</p>
+
+    <div class="card">
+      <label>What do you need an excuse for?</label>
+      <div class="input-row">
+        <input type="text" id="situation" placeholder="Type, or tap 🎤 to speak…" />
+        <button class="mic" id="mic" title="Speak your situation">🎤</button>
+      </div>
+      <div class="chips" id="chips"></div>
+
+      <div class="slider">
+        <div class="row"><span>😇 Believability</span><span class="val" id="bv">Pretty believable</span></div>
+        <input type="range" id="believe" min="0" max="100" value="70" />
+      </div>
+      <div class="slider">
+        <div class="row"><span>🎭 Drama</span><span class="val" id="dv">A little dramatic</span></div>
+        <input type="range" id="drama" min="0" max="100" value="35" />
+      </div>
+
+      <button class="go" id="go">🎲 Generate excuses</button>
+      <div class="err" id="err"></div>
+    </div>
+
+    <div class="out" id="out"></div>
+  </div>
+
+  <div class="mbg" id="mbg">
+    <div class="modal">
+      <h3>API settings 🔑</h3>
+      <p>Talks to Groq from your browser. Your key stays on <b>this device</b> only and goes nowhere but Groq.</p>
+      <label>Groq API key</label>
+      <input type="password" id="key" placeholder="gsk_…" autocomplete="off" />
+      <label>Model</label>
+      <select id="model">
+        <option value="openai/gpt-oss-120b">GPT-OSS 120B — best quality (recommended)</option>
+        <option value="llama-3.3-70b-versatile">Llama 3.3 70B — fast all-rounder</option>
+        <option value="openai/gpt-oss-20b">GPT-OSS 20B — faster</option>
+        <option value="llama-3.1-8b-instant">Llama 3.1 8B — fastest</option>
+      </select>
+      <button class="msave" id="msave">Save</button>
+      <p class="key-note">Get a free key at <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com</a> — no card needed.</p>
+    </div>
+  </div>
+
+  <script>
+    const $=id=>document.getElementById(id);
+    const getKey=()=>localStorage.getItem('groq_key')||'';
+    const getModel=()=>localStorage.getItem('groq_model')||'openai/gpt-oss-120b';
+
+    // ---------- example chips ----------
+    const EXAMPLES=["Skip a friend's wedding","Late to work","Cancel weekend plans","Miss an online meeting","Dodge a family dinner"];
+    $('chips').innerHTML=EXAMPLES.map(e=>`<span class="chip">${e}</span>`).join('');
+    $('chips').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{$('situation').value=c.textContent;$('situation').focus();});
+
+    // ---------- sliders ----------
+    const bLabels=['barely plausible','a bit of a stretch','plausible','pretty believable','rock-solid alibi'];
+    const dLabels=['totally chill','low-key','a little dramatic','quite dramatic','full soap-opera'];
+    function lab(v,arr){return arr[Math.min(arr.length-1,Math.floor(v/100*arr.length))];}
+    function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+    $('believe').oninput=e=>$('bv').textContent=cap(lab(+e.target.value,bLabels));
+    $('drama').oninput=e=>$('dv').textContent=cap(lab(+e.target.value,dLabels));
+
+    // ---------- voice input ----------
+    const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;
+    let recog=null,listening=false;
+    if(Rec){
+      recog=new Rec();recog.lang='en-US';recog.interimResults=true;recog.continuous=false;
+      recog.onresult=e=>{let t='';for(let i=0;i<e.results.length;i++)t+=e.results[i][0].transcript;$('situation').value=t;};
+      recog.onend=()=>{listening=false;$('mic').classList.remove('on');};
+      recog.onerror=()=>{listening=false;$('mic').classList.remove('on');};
+    }else{$('mic').style.display='none';}
+    $('mic').onclick=()=>{
+      if(!recog)return;
+      if(listening){recog.stop();return;}
+      listening=true;$('mic').classList.add('on');$('situation').value='';
+      try{recog.start();}catch(_){}
+    };
+
+    // ---------- settings ----------
+    function openSettings(){$('key').value=getKey();$('model').value=getModel();$('mbg').classList.add('show');}
+    $('gear').onclick=openSettings;
+    $('mbg').onclick=e=>{if(e.target===$('mbg'))$('mbg').classList.remove('show');};
+    $('msave').onclick=()=>{localStorage.setItem('groq_key',$('key').value.trim());localStorage.setItem('groq_model',$('model').value);$('mbg').classList.remove('show');};
+
+    // ---------- Groq call (with retry) ----------
+    async function callAI(system,user,maxTokens=1100){
+      const key=getKey();if(!key)throw new Error('NO_KEY');
+      const body=JSON.stringify({model:getModel(),messages:[{role:'system',content:system},{role:'user',content:user}],max_tokens:maxTokens,temperature:1,response_format:{type:'json_object'}});
+      let lastErr;
+      for(let attempt=0;attempt<4;attempt++){
+        if(attempt)await new Promise(r=>setTimeout(r,700*attempt));
+        let res;
+        try{res=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'content-type':'application/json','authorization':'Bearer '+key},body});}
+        catch(_){lastErr=new Error('NET');continue;}
+        if(res.status===401)throw new Error('BAD_KEY');
+        if(res.status===404)throw new Error('MODEL');
+        if(res.status===429){lastErr=new Error('QUOTA');continue;}
+        if(res.status>=500){lastErr=new Error('BUSY');continue;}
+        if(!res.ok)throw new Error('API '+res.status);
+        const data=await res.json();
+        const text=data.choices&&data.choices[0]&&data.choices[0].message?(data.choices[0].message.content||''):'';
+        if(!text){lastErr=new Error('EMPTY');continue;}
+        return text;
+      }
+      throw lastErr||new Error('BUSY');
+    }
+    function parseJSON(t){t=t.trim().replace(/^```(json)?/i,'').replace(/```$/,'').trim();const s=t.indexOf('{'),e=t.lastIndexOf('}');if(s>=0&&e>s)t=t.slice(s,e+1);return JSON.parse(t);}
+    function showErr(m){$('err').textContent=m;$('err').classList.add('show');}function clearErr(){$('err').classList.remove('show');}
+    function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+    const SYS=`You are an expert excuse writer with deep knowledge of human psychology and social dynamics.
+
+Your job is to generate 3 creative, contextually appropriate excuses tailored to the user's situation.
+
+Each excuse must:
+- Feel natural and conversational, not rehearsed
+- Be written in the SAME language, script and casual style the user used in their situation (if they wrote Roman Urdu, use natural, correctly-spelled everyday Pakistani Roman Urdu - never Hindi)
+- Match the believability level (1-10): low = vague & simple, high = specific & detailed with realistic details
+- Match the drama level (1-10): low = calm & casual, high = emotionally charged & urgent
+- Include realistic supporting details (timing, people, places) that make it coherent
+- Be appropriate for the relationship context (boss, friend, family, partner)
+
+Respond ONLY with valid minified JSON in this exact format:
+{"excuses":[{"title":"Short title","excuse":"Full excuse text","confidence":"High/Medium/Low","tip":"One line delivery tip"}]}
+
+Rules:
+- Never break character
+- Never add explanation outside JSON
+- Make each excuse distinctly different in approach
+- Keep excuses ethical and harmless`;
+
+    async function generate(){
+      const sit=$('situation').value.trim();clearErr();
+      if(!sit){showErr('Tell me what you need an excuse for 🙂');return;}
+      if(!getKey()){showErr('Add your Groq API key first — tap ⚙️.');openSettings();return;}
+      const btn=$('go');btn.disabled=true;btn.innerHTML='<span class="spin"></span>Cooking…';
+      $('out').classList.remove('show');
+      try{
+        const bv=+$('believe').value,dv=+$('drama').value;
+        const b10=Math.round(bv/100*9)+1,d10=Math.round(dv/100*9)+1;
+        const user=`User's situation: "${sit}".
+Believability level: ${b10}/10. Drama level: ${d10}/10.
+Relationship context: infer it from the situation (boss / friend / family / partner).
+Write every excuse in the SAME language, script and casual style as the situation above (if Roman Urdu, natural correctly-spelled Pakistani Roman Urdu, not Hindi). Return the JSON exactly as specified.`;
+        const out=parseJSON(await callAI(SYS,user));
+        $('out').innerHTML=(out.excuses||[]).map((x,i)=>{
+          if(typeof x==='string')x={excuse:x};
+          const title=esc(x.title||''),ex=esc(x.excuse||x.text||''),conf=esc(x.confidence||''),tip=esc(x.tip||'');
+          const cl=/high/i.test(conf)?'hi':/low/i.test(conf)?'lo':'mid';
+          return `<div class="ex-card"><span class="n">${i+1}.</span><div class="body">
+            ${(title||conf)?`<div class="ex-head">${title?`<span class="ex-title">${title}</span>`:'<span></span>'}${conf?`<span class="conf ${cl}">${conf}</span>`:''}</div>`:''}
+            <div class="ex-line"><span class="txt">${ex}</span><button class="cp">Copy</button></div>
+            ${tip?`<div class="tip">💡 ${tip}</div>`:''}
+          </div></div>`;
+        }).join('');
+        $('out').querySelectorAll('.cp').forEach(b=>b.onclick=()=>{navigator.clipboard.writeText(b.previousElementSibling.textContent);b.textContent='Copied!';setTimeout(()=>b.textContent='Copy',1200);});
+        $('out').classList.add('show');
+        $('out').scrollIntoView({behavior:'smooth',block:'start'});
+      }catch(e){
+        if(e.message==='NO_KEY'){showErr('Add your API key first (⚙️).');openSettings();}
+        else if(e.message==='BAD_KEY')showErr('That Groq key was rejected — check it in ⚙️ (starts with gsk_).');
+        else if(e.message==='MODEL')showErr('That model is not available — pick a different one in ⚙️.');
+        else if(e.message==='QUOTA')showErr('Going fast — Groq rate limit. Wait a few seconds and try again.');
+        else if(e.message==='BUSY')showErr('Groq is busy right now — I retried a few times. Wait a few seconds.');
+        else if(e.message==='NET')showErr('Network hiccup — check your connection and try again.');
+        else if(e.message==='EMPTY')showErr('Groq returned nothing — try again or rephrase.');
+        else if(e instanceof SyntaxError)showErr('Got a weird response — try again.');
+        else showErr('Something went wrong: '+e.message);
+      }finally{btn.disabled=false;btn.textContent='🎲 Generate more';}
+    }
+    $('go').onclick=generate;
+    $('situation').addEventListener('keydown',e=>{if(e.key==='Enter')generate();});
+
+    if(!getKey())openSettings();
+
+    // installable PWA (active over https / on deploy)
+    if('serviceWorker' in navigator){
+      window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+    }
+  </script>
+</body>
+</html>
