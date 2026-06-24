@@ -262,9 +262,21 @@ Write every excuse in the SAME language, script and casual style as the situatio
 
     if(!getKey())openSettings();
 
-    // installable PWA (active over https / on deploy)
+    // installable PWA + auto-update (refreshes the app when a new version is deployed)
     if('serviceWorker' in navigator){
-      window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+      let refreshing=false;
+      navigator.serviceWorker.addEventListener('controllerchange',()=>{
+        if(refreshing)return;refreshing=true;location.reload();
+      });
+      window.addEventListener('load',async()=>{
+        try{
+          const reg=await navigator.serviceWorker.register('sw.js');
+          // check for a new version on launch, every minute, and whenever the app regains focus
+          reg.update().catch(()=>{});
+          setInterval(()=>reg.update().catch(()=>{}),60000);
+          document.addEventListener('visibilitychange',()=>{if(!document.hidden)reg.update().catch(()=>{});});
+        }catch(_){}
+      });
     }
   </script>
 </body>
