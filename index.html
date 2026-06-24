@@ -106,7 +106,7 @@
         <input type="range" id="drama" min="0" max="100" value="35" />
       </div>
 
-      <button class="go" id="go">🎲 Generate excuses</button>
+      <button class="go" id="go">🪄 Generate excuses</button>
       <div class="err" id="err"></div>
     </div>
 
@@ -255,7 +255,7 @@ Write every excuse in the SAME language, script and casual style as the situatio
         else if(e.message==='EMPTY')showErr('Groq returned nothing — try again or rephrase.');
         else if(e instanceof SyntaxError)showErr('Got a weird response — try again.');
         else showErr('Something went wrong: '+e.message);
-      }finally{btn.disabled=false;btn.textContent='🎲 Generate more';}
+      }finally{btn.disabled=false;btn.textContent='🪄 Generate more';}
     }
     $('go').onclick=generate;
     $('situation').addEventListener('keydown',e=>{if(e.key==='Enter')generate();});
