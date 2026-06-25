@@ -1,4 +1,4 @@
-const CACHE = 'goli-karao-v2';
+const CACHE = 'goli-karao-v3';
 const ASSETS = [
   './',
   './index.html',
